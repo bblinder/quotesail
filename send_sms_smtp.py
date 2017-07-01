@@ -3,7 +3,16 @@
 import random
 import smtplib
 import time
+from datetime import datetime, timedelta, date
+import logging
 #from time import gmtime, strftime, localtime
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler('quotesail.log')
+handler.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+logger.info("[{}] - quotesail was run".format(datetime.now()))
 
 # Credentials (if needed)
 # A new gmail account is recommended for this
