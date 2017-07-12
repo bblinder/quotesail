@@ -29,9 +29,11 @@ def random_quote():
 #subject = "For you, a word..."
 subject = random_quote()
 message = 'Subject: {}\n\n{}'.format(subject, subject)
+
 # The actual mail send
-server = smtplib.SMTP('smtp.gmail.com:587')
-server.starttls()
-server.login(username,password)
-server.sendmail(fromaddr, toaddrs, message)
-server.quit()
+if __name__ == '__main__':
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.starttls()
+    server.login(username,password)
+    server.sendmail(fromaddr, toaddrs, message)
+    server.quit()
