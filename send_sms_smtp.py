@@ -26,9 +26,7 @@ def random_quote():
     random_quote = (random.choice(list(open('quotes.txt'))))
     return random_quote
 
-subject = "For you, a word..."
-# subject = random_quote()
-message = 'Subject: {}\n\n{}'.format(subject, subject)
+message = 'Subject: A little something \n\n%' % random_quote()
 
 # The actual mail send
 if __name__ == '__main__':
